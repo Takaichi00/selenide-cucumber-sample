@@ -7,14 +7,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="selenide-cucumber-sample" />
+        <module name="frontend" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="frontend" target="1.8" />
       <module name="selenide-cucumber-sample" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="frontend" options="-parameters" />
       <module name="selenide-cucumber-sample" options="-parameters" />
     </option>
   </component>
