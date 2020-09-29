@@ -1,6 +1,7 @@
 - [ ] サンプル画面の作成
+    - [x] サンプル画面の表示
+    - [ ] Bootstrap を導入
     - [ ] 入力フォーム画面
     - [ ] 完了画面
-- [ ] Bootstrap
-- [ ] Selenide で簡単なテストを実装
-- [ ] Cucumber 導入
+- [ ] Selenide + Cucumber で簡単なテストを実装
+    - [ ] "sample"が表示されること
