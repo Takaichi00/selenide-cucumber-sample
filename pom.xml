@@ -18,6 +18,8 @@
 		<java.version>11</java.version>
 		<cucumber.version>6.6.1</cucumber.version>
 		<selenide.version>5.14.2</selenide.version>
+		<failsafe.version>2.22.2</failsafe.version>
+		<jupiter.version>5.3.2</jupiter.version>
 	</properties>
 
 	<dependencies>
@@ -32,47 +34,46 @@
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
 			<optional>true</optional>
 		</dependency>
 
-	<!--test scope-->
+		<!--test scope-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.junit.vintage</groupId>
-					<artifactId>junit-vintage-engine</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
-	<dependency>
-		<groupId>com.codeborne</groupId>
-		<artifactId>selenide</artifactId>
-		<version>${selenide.version}</version>
-		<scope>test</scope>
-	</dependency>
-	<dependency>
-		<groupId>io.cucumber</groupId>
-		<artifactId>cucumber-java</artifactId>
-		<version>${cucumber.version}</version>
-		<scope>test</scope>
-	</dependency>
-	<dependency>
-		<groupId>io.cucumber</groupId>
-		<artifactId>cucumber-junit</artifactId>
-		<version>${cucumber.version}</version>
-		<scope>test</scope>
-	</dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
+		<dependency>
+			<groupId>com.codeborne</groupId>
+			<artifactId>selenide</artifactId>
+			<version>${selenide.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.vintage</groupId>
+			<artifactId>junit-vintage-engine</artifactId>
+			<version>${jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
     </dependencies>
 
 	<build>
@@ -80,6 +81,27 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>${failsafe.version}</version>
+				<configuration>
+					<excludes>
+						<exclude>**/*Test.java</exclude>
+					</excludes>
+					<includes>
+						<include>**/*RunCucumber.java</include>
+					</includes>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
