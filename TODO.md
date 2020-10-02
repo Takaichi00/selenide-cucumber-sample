@@ -5,3 +5,5 @@
     - [ ] 完了画面
 - [ ] Selenide + Cucumber で簡単なテストを実装
     - [ ] "sample"が表示されること
+    - [ ] Senario Outline
+    - [ ] Example
