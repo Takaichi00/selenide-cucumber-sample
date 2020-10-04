@@ -1,13 +1,30 @@
 package com.takaichi00.selenidecucumbersample.cucumber.steps;
 
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.WebDriverRunner;
+import io.cucumber.java.BeforeStep;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.ja.ならば;
 import io.cucumber.java.ja.もし;
 
+import static com.codeborne.selenide.Selenide.open;
+
 public class SampleSteps {
+
+  @BeforeStep
+  public static void beforeStep(Scenario scenario) {
+    Configuration.browser = WebDriverRunner.CHROME;
+    Configuration.baseUrl = "http://localhost:8080";
+
+    //テスト実行後もブラウザを開いた状態にすることができる
+    //Configuration.holdBrowserOpen = true;
+
+    System.setProperty("webdriver.chrome.driver", "drivers/chromedriver-mac-64.bit.version.2.41");
+  }
 
   @もし("サンプルページにアクセスした")
   public void もしサンプルページにアクセスした() {
-
+    open("https://google.com");
   }
 
   @ならば("{string}が表示される")
