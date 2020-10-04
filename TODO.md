@@ -9,3 +9,4 @@
     - [ ] Example
 - [ ] webdriverextensions を導入する
     - [MavenでWebDriverの管理にはwebdriverextensionsが便利そう](https://su-kun1899.hatenablog.com/entry/2017/11/14/220000)
+- [ ] JUnit5 対応を確認する
