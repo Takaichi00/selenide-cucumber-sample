@@ -7,6 +7,8 @@ import io.cucumber.java.Scenario;
 import io.cucumber.java.ja.ならば;
 import io.cucumber.java.ja.もし;
 
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class SampleSteps {
@@ -15,6 +17,7 @@ public class SampleSteps {
   public static void beforeStep(Scenario scenario) {
     Configuration.browser = WebDriverRunner.CHROME;
     Configuration.baseUrl = "http://localhost:8080";
+    Configuration.timeout = 5000;
 
     //テスト実行後もブラウザを開いた状態にすることができる
     //Configuration.holdBrowserOpen = true;
@@ -24,12 +27,12 @@ public class SampleSteps {
 
   @もし("サンプルページにアクセスした")
   public void もしサンプルページにアクセスした() {
-    open("https://google.com");
+    open("/createForm");
   }
 
   @ならば("{string}が表示される")
   public void ならば_string_が表示される(String sampleStr) {
-
+    $("#sample").shouldHave(text("sample"));
   }
 
 }
