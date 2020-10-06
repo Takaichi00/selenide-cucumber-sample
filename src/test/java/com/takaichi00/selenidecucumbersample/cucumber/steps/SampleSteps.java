@@ -27,7 +27,7 @@ public class SampleSteps {
 
   @もし("サンプルページにアクセスした")
   public void もしサンプルページにアクセスした() {
-    open("/createForm");
+    open("/sample");
   }
 
   @ならば("{string}が表示される")

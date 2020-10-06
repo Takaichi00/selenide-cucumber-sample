@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ApplicationFormController {
 
-  @RequestMapping(path = "/createForm", method = {GET, POST})
+  @RequestMapping(path = "/sample", method = {GET, POST})
   public String showBootPage() {
-    return "createForm";
+    return "sample";
   }
 
 }
