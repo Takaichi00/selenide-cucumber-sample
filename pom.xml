@@ -20,6 +20,7 @@
 		<selenide.version>5.14.2</selenide.version>
 		<failsafe.version>2.22.2</failsafe.version>
 		<jupiter.version>5.3.2</jupiter.version>
+		<dbsetup.version>2.1.0</dbsetup.version>
 	</properties>
 
 	<dependencies>
@@ -38,6 +39,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>compile</scope>
+		</dependency>
 
 
 		<!--provide scope-->
@@ -49,11 +55,6 @@
 		</dependency>
 
 		<!--runtime scope-->
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -91,6 +92,12 @@
       <version>${jupiter.version}</version>
       <scope>test</scope>
     </dependency>
+		<dependency>
+			<groupId>com.ninja-squad</groupId>
+			<artifactId>DbSetup</artifactId>
+			<version>${dbsetup.version}</version>
+			<scope>test</scope>
+		</dependency>
   </dependencies>
 
 	<build>

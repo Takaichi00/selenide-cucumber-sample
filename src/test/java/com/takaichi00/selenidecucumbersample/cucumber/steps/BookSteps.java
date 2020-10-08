@@ -2,7 +2,6 @@ package com.takaichi00.selenidecucumbersample.cucumber.steps;
 
 import io.cucumber.java.ja.ならば;
 import io.cucumber.java.ja.もし;
-
 import java.util.List;
 import java.util.Map;
 
