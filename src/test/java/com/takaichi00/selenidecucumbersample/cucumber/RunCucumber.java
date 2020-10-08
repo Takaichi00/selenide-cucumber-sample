@@ -5,6 +5,8 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src/test/resources", monochrome = true)
+@CucumberOptions(features = "src/test/resources",
+                 tags = "not @Developing",
+                 monochrome = true)
 public class RunCucumber {
 }
