@@ -6,6 +6,7 @@ import io.cucumber.java.BeforeStep;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.ja.ならば;
 import io.cucumber.java.ja.もし;
+import io.cucumber.java.ja.前提;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
