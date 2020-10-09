@@ -16,10 +16,16 @@ public class ApplicationFormController {
   @Autowired
   SampleRepository sampleRepository;
 
-  @RequestMapping(path = "/sample", method = {GET, POST})
-  public String showBootPage() {
+  @RequestMapping(path = "/sample", method = {GET})
+  public String showSamplePage() {
     log.info(sampleRepository.findAll().toString());
     return "sample";
+  }
+
+  @RequestMapping(path = "/top", method = {GET})
+  public String showTopPage() {
+    log.info(sampleRepository.findAll().toString());
+    return "top";
   }
 
 }
