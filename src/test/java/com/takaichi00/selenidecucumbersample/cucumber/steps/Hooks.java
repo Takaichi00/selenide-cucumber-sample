@@ -33,14 +33,14 @@ public class Hooks {
 
     System.setProperty("webdriver.chrome.driver", "drivers/chromedriver-mac-64.bit.version.2.41");
 
-    Operation operation = sequenceOf(
-      deleteAllFrom("sample"),
-      insertInto("sample").columns("id").values(1).build());
-
-    DriverManagerDestination destination = new DriverManagerDestination("jdbc:h2:tcp://localhost:9090/~/data/sample", "username", "password");
-
-    DbSetup dbSetup = new DbSetup(destination, operation);
-    dbSetup.launch();
+//    Operation operation = sequenceOf(
+//      deleteAllFrom("sample"),
+//      insertInto("sample").columns("id").values(1).build());
+//
+//    DriverManagerDestination destination = new DriverManagerDestination("jdbc:h2:tcp://localhost:9090/~/data/sample", "username", "password");
+//
+//    DbSetup dbSetup = new DbSetup(destination, operation);
+//    dbSetup.launch();
 
   }
 

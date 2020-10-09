@@ -20,8 +20,8 @@ public class BookSteps {
   @ならば("管理している以下の本の情報を確認することができる")
   public void 管理している以下の本の情報を確認することができる(List<Map<String, String>> dataTable) {
     TopPage topPage = page(TopPage.class);
-    topPage.getBookListTable().getRow(1).getTitle().shouldHave(text(dataTable.get(0).get("タイトル")));
-    topPage.getBookListTable().getRow(1).getIsbn().shouldHave(text(dataTable.get(0).get("ISBN")));
-    topPage.getBookListTable().getRow(1).getRegisterDate().shouldHave(text(dataTable.get(0).get("登録日")));
+    topPage.getBookListTableTitle(0).shouldHave(text(dataTable.get(0).get("タイトル")));
+//    topPage.getBookListTableIsbn(1).getIsbn().shouldHave(text(dataTable.get(0).get("ISBN")));
+//    topPage.getBookListTableRegisterDate(1).shouldHave(text(dataTable.get(0).get("登録日")));
   }
 }
