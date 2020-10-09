@@ -23,7 +23,7 @@ public class Hooks {
 
   @Before
   public static void before() {
-
+    System.out.println("before");
     Configuration.browser = WebDriverRunner.CHROME;
     Configuration.baseUrl = "http://localhost:8080";
     Configuration.timeout = 5000;
