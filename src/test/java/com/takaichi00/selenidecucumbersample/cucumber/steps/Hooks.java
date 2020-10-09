@@ -5,10 +5,12 @@ import com.codeborne.selenide.WebDriverRunner;
 import com.ninja_squad.dbsetup.DbSetup;
 import com.ninja_squad.dbsetup.destination.DriverManagerDestination;
 import com.ninja_squad.dbsetup.operation.Operation;
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeStep;
 import io.cucumber.java.Scenario;
 
+import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.ninja_squad.dbsetup.Operations.deleteAllFrom;
 import static com.ninja_squad.dbsetup.Operations.insertInto;
 import static com.ninja_squad.dbsetup.operation.CompositeOperation.sequenceOf;
@@ -17,6 +19,11 @@ public class Hooks {
 
   @BeforeStep
   public static void beforeStep(Scenario scenario) {
+  }
+
+  @Before
+  public static void before() {
+
     Configuration.browser = WebDriverRunner.CHROME;
     Configuration.baseUrl = "http://localhost:8080";
     Configuration.timeout = 5000;
@@ -25,10 +32,7 @@ public class Hooks {
     //Configuration.holdBrowserOpen = true;
 
     System.setProperty("webdriver.chrome.driver", "drivers/chromedriver-mac-64.bit.version.2.41");
-  }
 
-  @Before
-  public static void before() {
     Operation operation = sequenceOf(
       deleteAllFrom("sample"),
       insertInto("sample").columns("id").values(1).build());
@@ -38,6 +42,12 @@ public class Hooks {
     DbSetup dbSetup = new DbSetup(destination, operation);
     dbSetup.launch();
 
+  }
+
+  @After
+  public void tearDown() {
+    System.out.println("after");
+    closeWebDriver();
   }
 
 }
