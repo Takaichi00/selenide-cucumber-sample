@@ -8,5 +8,6 @@ public class HooksSteps {
 
   @前提("以下の本を管理している")
   public void 以下の本を管理している(List<Map<String, String>> dataTable) {
+    // TODO DB 前準備
   }
 }

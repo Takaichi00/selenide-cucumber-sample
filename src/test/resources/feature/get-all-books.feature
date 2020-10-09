@@ -1,6 +1,6 @@
 # language: ja
 
-@Developing
+#@Developing
 機能: トップページで図書の一覧が表示される
 
   背景: 事前に本が登録されている
