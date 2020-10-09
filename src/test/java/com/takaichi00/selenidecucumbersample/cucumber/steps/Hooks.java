@@ -9,6 +9,8 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeStep;
 import io.cucumber.java.Scenario;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.ninja_squad.dbsetup.Operations.deleteAllFrom;
@@ -42,6 +44,11 @@ public class Hooks {
 //    DbSetup dbSetup = new DbSetup(destination, operation);
 //    dbSetup.launch();
 
+    //HeadLessモード指定
+    ChromeOptions chromeOptions = new ChromeOptions();
+    chromeOptions.addArguments("--headless");
+    ChromeDriver driver = new ChromeDriver(chromeOptions);
+    WebDriverRunner.setWebDriver(driver);
   }
 
   @After
