@@ -19,8 +19,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td class="title">title1</td>
+      <tr th:each="book: ${bookList}">
+        <td class="title" th:text="${book.title}}"></td>
         <td class="isbn">9784865942248C</td>
         <td class="register-date">2020-10-10</td>
       </tr>
