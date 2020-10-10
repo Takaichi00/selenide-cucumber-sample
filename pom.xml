@@ -21,6 +21,7 @@
 		<failsafe.version>2.22.2</failsafe.version>
 		<jupiter.version>5.3.2</jupiter.version>
 		<dbsetup.version>2.1.0</dbsetup.version>
+		<webdriverextensions-maven-plugin.version>3.2.0</webdriverextensions-maven-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -126,6 +127,28 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.github.webdriverextensions</groupId>
+				<artifactId>webdriverextensions-maven-plugin</artifactId>
+				<version>${webdriverextensions-maven-plugin.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>install-drivers</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<drivers>
+						<driver>
+							<name>chromedriver</name>
+							<platform>mac</platform>
+							<bit>64</bit>
+							<version>86.0.4240.22</version>
+						</driver>
+					</drivers>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

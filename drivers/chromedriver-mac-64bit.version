@@ -1,0 +1,7 @@
+{
+  "name": "chromedriver",
+  "platform": "mac",
+  "bit": "64",
+  "version": "86.0.4240.22",
+  "url": "https://chromedriver.storage.googleapis.com/86.0.4240.22/chromedriver_mac64.zip"
+}
