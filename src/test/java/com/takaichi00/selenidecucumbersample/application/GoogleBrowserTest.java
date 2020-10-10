@@ -18,7 +18,7 @@ public class GoogleBrowserTest {
     Configuration.browser = WebDriverRunner.CHROME;
     Configuration.timeout = 5000;
 
-    System.setProperty("webdriver.chrome.driver", "drivers/chromedriver-mac.86.0.4240.22");
+    System.setProperty("webdriver.chrome.driver", "drivers/chromedriver-mac-64bit");
 
     //テスト実行後もブラウザを開いた状態にすることができる
 //    Configuration.holdBrowserOpen = true;
