@@ -46,7 +46,6 @@
 			<scope>compile</scope>
 		</dependency>
 
-
 		<!--provide scope-->
 		<dependency>
 			<groupId>org.projectlombok</groupId>

@@ -20,10 +20,11 @@ public class GoogleBrowserTest {
 
     System.setProperty("webdriver.chrome.driver", "drivers/chromedriver-mac-64bit");
 
-    //テスト実行後もブラウザを開いた状態にすることができる
+    // テスト実行後もブラウザを開いた状態にすることができる
 //    Configuration.holdBrowserOpen = true;
 
-    //HeadLessモード指定
+    // HeadLess モード指定
+    // 以下のコメントアウトを外すか、 -Dchromeoptions.args=headless を VM Options に指定する
 //    ChromeOptions chromeOptions = new ChromeOptions();
 //    chromeOptions.addArguments("--headless");
 //    ChromeDriver driver = new ChromeDriver(chromeOptions);
