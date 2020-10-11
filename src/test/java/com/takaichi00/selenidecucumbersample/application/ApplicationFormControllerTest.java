@@ -34,7 +34,10 @@ class ApplicationFormControllerTest {
   @Test
   void トップページにアクセスしたら本の情報が取得できること() throws Exception {
 
-    when(bookRepository.findAll()).thenReturn(Arrays.asList(BookEntity.builder().id(1).title("title1").build()));
+    when(bookRepository.findAll()).thenReturn(Arrays.asList(BookEntity.builder()
+                                                                      .id(1)
+                                                                      .title("title1")
+                                                                      .build()));
 
     BookForDisplay book = BookForDisplay.builder().title("title1").build();
 
