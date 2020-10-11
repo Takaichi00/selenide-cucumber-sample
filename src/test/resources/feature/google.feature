@@ -1,5 +1,6 @@
 # language: ja
 
+@Developing
 機能: Google検索をすることができる
 
   背景: Googleのトップページにアクセスしている
