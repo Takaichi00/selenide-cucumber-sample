@@ -28,4 +28,8 @@ public class GooglePage {
   public SelenideElement getSearchExecuteButton() {
     return $("input.gNO89b");
   }
+
+  public SelenideElement getGoogleMission() {
+    return $("#module-anchor-statement-mission-statement h1");
+  }
 }

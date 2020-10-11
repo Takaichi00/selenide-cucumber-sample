@@ -33,6 +33,13 @@ public class SampleSteps {
         .shouldHave(text(dataTable.get(i).get("title")));
     }
   }
+
+  @ならば("ヘッダーという文字がある")
+  public void ヘッダーという文字がある() {
+    $("#header").shouldHave(text("ヘッダーです"));
+  }
+
+
   @もし("{string}を選択する")
   public void を選択する(String arg0) {
     // ...
@@ -78,4 +85,7 @@ public class SampleSteps {
     $("#from").dragAndDropTo($("#to"));
   }
 
+  @前提("名前が{string}であるユーザーがログインしている")
+  public void 名前がであるユーザーがログインしている(String arg0) {
+  }
 }

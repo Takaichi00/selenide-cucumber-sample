@@ -6,7 +6,6 @@ import io.cucumber.java.ja.ならば;
 import io.cucumber.java.ja.もし;
 import io.cucumber.java.ja.前提;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
@@ -23,7 +22,7 @@ public class GoogleSteps {
 
   @もし("検索欄に{string}を入力した")
   public void 検索欄に検索文字を入力した(String searchText) {
-    googlePage.getSearchBox().setValue("こんにちは");
+    googlePage.getSearchBox().setValue(searchText);
   }
 
   @かつ("検索を実行した")
@@ -36,4 +35,13 @@ public class GoogleSteps {
     googlePage.getResultStats().should(visible);
   }
 
+  @もし("Googleについてをクリックした")
+  public void googleについてをクリックした() {
+    googlePage.getInformation().click();
+  }
+
+  @ならば("Googleの使命が表示される")
+  public void googleの使命が表示される() {
+    googlePage.getGoogleMission().shouldBe(visible);
+  }
 }
