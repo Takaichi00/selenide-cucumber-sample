@@ -4,7 +4,6 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-import com.codeborne.selenide.Condition;
 import io.cucumber.java.ja.かつ;
 import io.cucumber.java.ja.もし;
 import io.cucumber.java.ja.ならば;

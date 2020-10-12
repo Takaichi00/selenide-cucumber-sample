@@ -18,6 +18,7 @@ public class HooksSteps {
   @前提("以下の本を管理している")
   public void 以下の本を管理している(List<Map<String, String>> dataTable) {
 
+    // テスト実行前に実行する insert 文を生成
     Insert.Builder insetSql = insertInto("books")
       .withGeneratedValue("id", ValueGenerators.sequence().startingAt(1).incrementingBy(1))
       .columns("title");
@@ -26,14 +27,18 @@ public class HooksSteps {
       insetSql.values(row.get("タイトル"));
     }
 
+    // 実行する sql を設定
     Operation operation = sequenceOf(deleteAllFrom("books"), insetSql.build());
 
+    // テスト用の DB 接続設定
     DriverManagerDestination destination =
       new DriverManagerDestination("jdbc:h2:tcp://localhost:9090/~/data/sample",
                                   "username",
                                "password");
 
     DbSetup dbSetup = new DbSetup(destination, operation);
+
+    // テストデータ SQL 実行
     dbSetup.launch();
   }
 }

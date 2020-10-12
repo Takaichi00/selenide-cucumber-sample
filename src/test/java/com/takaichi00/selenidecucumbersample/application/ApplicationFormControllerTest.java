@@ -39,7 +39,9 @@ class ApplicationFormControllerTest {
                                                                       .title("title1")
                                                                       .build()));
 
-    BookForDisplay book = BookForDisplay.builder().title("title1").build();
+    BookForDisplay book = BookForDisplay.builder()
+                                        .title("title1")
+                                        .build();
 
     mockMvc.perform(get("/top"))
       .andExpect(status().isOk())

@@ -24,6 +24,5 @@ public class BookSteps {
     for (int i = 0; i < dataTable.size(); ++i) {
       topPage.getBookListTableTitle(i).shouldHave(text(dataTable.get(i).get("タイトル")));
     }
-
   }
 }
