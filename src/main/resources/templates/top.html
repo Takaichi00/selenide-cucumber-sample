@@ -19,6 +19,7 @@
     <tbody>
       <tr th:each="book: ${bookList}">
         <td class="title" th:text="${book.title}"></td>
+        <td class="author" th:text="${book.author}"></td>
       </tr>
     </tbody>
   </table>

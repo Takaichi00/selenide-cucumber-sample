@@ -13,4 +13,9 @@ public class TopPage {
     return row.get(i).$(".title");
   }
 
+  public SelenideElement getBookListTableAuthor(int i) {
+    SelenideElement table = $(".bookListTable tbody");
+    ElementsCollection row = table.$$("tr");
+    return row.get(i).$(".author");
+  }
 }

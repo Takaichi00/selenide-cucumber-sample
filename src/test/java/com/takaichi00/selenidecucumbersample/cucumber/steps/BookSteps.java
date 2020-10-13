@@ -23,6 +23,7 @@ public class BookSteps {
 
     for (int i = 0; i < dataTable.size(); ++i) {
       topPage.getBookListTableTitle(i).shouldHave(text(dataTable.get(i).get("タイトル")));
+      topPage.getBookListTableAuthor(i).shouldHave(text(dataTable.get(i).get("著者名")));
     }
   }
 }

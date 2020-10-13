@@ -38,6 +38,7 @@ public class ApplicationFormController {
     for (BookEntity bookEntity : bookEntities) {
       bookForDisplays.add(BookForDisplay.builder()
         .title(bookEntity.getTitle())
+        .author(bookEntity.getAuthor())
         .build());
     }
 

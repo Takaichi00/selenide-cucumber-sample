@@ -21,10 +21,10 @@ public class HooksSteps {
     // テスト実行前に実行する insert 文を生成
     Insert.Builder insetSql = insertInto("books")
       .withGeneratedValue("id", ValueGenerators.sequence().startingAt(1).incrementingBy(1))
-      .columns("title");
+      .columns("title", "author");
 
     for (Map<String, String> row : dataTable) {
-      insetSql.values(row.get("タイトル"));
+      insetSql.values(row.get("タイトル"), row.get("著者名"));
     }
 
     // 実行する sql を設定

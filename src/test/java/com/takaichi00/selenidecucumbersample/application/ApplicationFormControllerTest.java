@@ -37,10 +37,12 @@ class ApplicationFormControllerTest {
     when(bookRepository.findAll()).thenReturn(Arrays.asList(BookEntity.builder()
                                                                       .id(1)
                                                                       .title("title1")
+                                                                      .author("たなか")
                                                                       .build()));
 
     BookForDisplay book = BookForDisplay.builder()
                                         .title("title1")
+                                        .author("たなか")
                                         .build();
 
     mockMvc.perform(get("/top"))

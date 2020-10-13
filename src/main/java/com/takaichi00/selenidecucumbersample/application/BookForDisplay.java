@@ -7,4 +7,5 @@ import lombok.Data;
 @Builder
 public class BookForDisplay {
   private String title;
+  private String author;
 }
