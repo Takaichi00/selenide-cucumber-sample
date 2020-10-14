@@ -1,4 +1,4 @@
-package com.takaichi00.selenidecucumbersample.application;
+package com.takaichi00.selenidecucumbersample.selenide;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;

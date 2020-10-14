@@ -24,10 +24,10 @@ public class Hooks {
 
     System.setProperty("webdriver.chrome.driver", "drivers/chromedriver-mac.86.0.4240.22");
 
-    //テスト実行後もブラウザを開いた状態にすることができる
-    Configuration.holdBrowserOpen = true;
+    // テスト実行後もブラウザを開いた状態にすることができる
+//    Configuration.holdBrowserOpen = true;
 
-    //HeadLessモード指定
+    // HeadLessモード指定
 //    ChromeOptions chromeOptions = new ChromeOptions();
 //    chromeOptions.addArguments("--headless");
 //    ChromeDriver driver = new ChromeDriver(chromeOptions);

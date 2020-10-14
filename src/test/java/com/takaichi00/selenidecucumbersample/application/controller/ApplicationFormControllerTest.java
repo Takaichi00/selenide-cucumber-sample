@@ -1,4 +1,4 @@
-package com.takaichi00.selenidecucumbersample.application;
+package com.takaichi00.selenidecucumbersample.application.controller;
 
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -7,8 +7,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
-import com.takaichi00.selenidecucumbersample.integration.BookEntity;
-import com.takaichi00.selenidecucumbersample.integration.BookRepository;
+import com.takaichi00.selenidecucumbersample.application.payload.BookForDisplay;
+import com.takaichi00.selenidecucumbersample.integration.entity.BookEntity;
+import com.takaichi00.selenidecucumbersample.domain.repository.BookRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

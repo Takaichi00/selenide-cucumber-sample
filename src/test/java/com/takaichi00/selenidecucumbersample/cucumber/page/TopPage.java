@@ -2,20 +2,21 @@ package com.takaichi00.selenidecucumbersample.cucumber.page;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import lombok.Getter;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
-import static com.codeborne.selenide.Selenide.$;
-
+@Getter
 public class TopPage {
 
+  @FindBy(how = How.CSS, using = ".bookListTable tbody tr")
+  private ElementsCollection tableRow;
+
   public SelenideElement getBookListTableTitle(int i) {
-    SelenideElement table = $(".bookListTable tbody");
-    ElementsCollection row = table.$$("tr");
-    return row.get(i).$(".title");
+    return tableRow.get(i).$(".title");
   }
 
   public SelenideElement getBookListTableAuthor(int i) {
-    SelenideElement table = $(".bookListTable tbody");
-    ElementsCollection row = table.$$("tr");
-    return row.get(i).$(".author");
+    return tableRow.get(i).$(".author");
   }
 }

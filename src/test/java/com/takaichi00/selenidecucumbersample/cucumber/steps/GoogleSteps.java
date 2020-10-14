@@ -1,6 +1,6 @@
 package com.takaichi00.selenidecucumbersample.cucumber.steps;
 
-import com.takaichi00.selenidecucumbersample.application.GooglePage;
+import com.takaichi00.selenidecucumbersample.selenide.GooglePage;
 import io.cucumber.java.ja.かつ;
 import io.cucumber.java.ja.ならば;
 import io.cucumber.java.ja.もし;
