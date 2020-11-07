@@ -1,6 +1,7 @@
 package com.takaichi00.selenidecucumbersample.selenide;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -22,6 +23,9 @@ public class GoogleBrowserTest {
 
     // テスト実行後もブラウザを開いた状態にすることができる
     Configuration.holdBrowserOpen = true;
+
+    Configuration.reportsFolder = "test-result/";
+
 
     // HeadLess モード指定
     // 以下のコメントアウトを外すか、 -Dchromeoptions.args=headless を VM Options に指定する
@@ -49,5 +53,11 @@ public class GoogleBrowserTest {
     googlePage.getSearchBox().setValue("こんにちは");
     googlePage.getSearchExecuteButton().click();
     googlePage.getResultStats().should(visible);
+
+    // ページ全体のスクリーンショット
+    Selenide.screenshot("google-search-result");
+
+    // ある要素のスクリーンショット
+    googlePage.getResultStats().screenshot();
   }
 }

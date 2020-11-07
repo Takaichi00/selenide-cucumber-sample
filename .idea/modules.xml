@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../smartphone-adviser/frontend/frontend.iml" filepath="$PROJECT_DIR$/../smartphone-adviser/frontend/frontend.iml" />
       <module fileurl="file://$PROJECT_DIR$/selenide-cucumber-sample.iml" filepath="$PROJECT_DIR$/selenide-cucumber-sample.iml" />
     </modules>
   </component>
